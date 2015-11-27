@@ -30,6 +30,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
 });
 
 Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
+
+    Route::get('/', function() {
+        return response()->json(['message' => 'Welcome', 'status' => 'ok']);
+    });
     Route::resource('resources', 'ResourceController', ['only' => ['index', 'show']]);
     Route::get('resources/{resources}/reservations', 'ResourceController@reservations');
     Route::get('resources/{resources}/check/{tagId}', 'ResourceController@check');

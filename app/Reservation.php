@@ -12,7 +12,9 @@ class Reservation extends Model
     
     protected $dates = ['starts_at', 'ends_at', 'created_at', 'updated_at'];
 
-    protected $visible = ['id', 'user_id', 'resource_id', 'starts_at', 'ends_at'];
+    protected $visible = ['id', 'user_id', 'resource_id', 'starts_at', 'ends_at', 'card_id'];
+
+    protected $appends = ['card_id'];
 
     public function user()
     {
@@ -52,5 +54,12 @@ class Reservation extends Model
     public function scopeActive($query)
     {
         return $query->where('ends_at', '>=', Date::now());
+    }
+
+    public function getCardIdAttribute()
+    {
+        if ($this->user->cards) {
+            return $this->user->cards->first()->id;
+        }
     }
 }
