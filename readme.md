@@ -12,3 +12,4 @@ Route                          | Method | Info
 `/resources/{id}`              | `GET`  | The detail of the given resource
 `/resources/{id}/reservations` | `GET`  | The future reservations for the given resource
 `/resources/{id}/check/{rfid}` | `GET`  | Check if the `rfid` owner has access to the resource (i.e. has an active reservation)
+`/reservations`                | `GET`  | A list of the active reservations

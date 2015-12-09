@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers\Api;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use Jenssegers\Date\Date;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
-use App\Resource;
 use App\Card;
+use App\Resource;
 use App\Resevation;
+use App\Http\Requests;
+use Jenssegers\Date\Date;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class ResourceController extends Controller
 {
@@ -33,17 +32,6 @@ class ResourceController extends Controller
     public function show(Resource $resource)
     {
         return $resource;
-    }
-
-    /**
-     * Display the reservations associated to the specified resource.
-     *
-     * @param  Resource  $resource
-     * @return Response
-     */
-    public function reservations(Resource $resource)
-    {
-        return $resource->reservations()->active()->get();
     }
 
     /**

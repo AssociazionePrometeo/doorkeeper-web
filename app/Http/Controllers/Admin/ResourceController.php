@@ -10,7 +10,6 @@ use App\Http\Requests\ResourceRequest;
 
 class ResourceController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
