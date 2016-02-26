@@ -9,7 +9,7 @@ use Jenssegers\Date\Date;
 class Reservation extends Model
 {
     use LocalizesDates;
-    
+
     protected $dates = ['starts_at', 'ends_at', 'created_at', 'updated_at'];
 
     protected $visible = ['id', 'user_id', 'resource_id', 'starts_at', 'ends_at', 'card_id'];
@@ -58,7 +58,7 @@ class Reservation extends Model
 
     public function getCardIdAttribute()
     {
-        if ($this->user->cards) {
+        if ($this->user->cards && $this->user->cards->first()) {
             return $this->user->cards->first()->id;
         }
     }
