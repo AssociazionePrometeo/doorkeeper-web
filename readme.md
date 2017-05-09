@@ -1,3 +1,5 @@
+# Project disctontinued and merged on https://github.com/AssociazionePrometeo/gianomanager
+
 ## Doorkeeper web panel prototype
 
 A rough prototype for the doorkeeper web API.
